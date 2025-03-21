@@ -1,0 +1,13 @@
+/.pytest_cache/
+/**/__pycache__/
+
+/allure-report/
+/allure-results/
+
+/playwright/
+/test-results/
+
+/venv/
+
+.env
+*.log

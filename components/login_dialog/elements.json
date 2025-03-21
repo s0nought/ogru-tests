@@ -1,0 +1,14 @@
+{
+    "usernameInput": {
+        "description": "Username Input",
+        "selector": "//*[@id='navbar_username']"
+    },
+    "passwordInput": {
+        "description": "Password Input",
+        "selector": "//*[@id='navbar_login']"
+    },
+    "submitButton": {
+        "description": "Submit Button",
+        "selector": "//*[@id='dialog-form']//input[@type='submit']"
+    }
+}

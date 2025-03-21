@@ -1,0 +1,6 @@
+{
+    "loginLink": {
+        "description": "Login Link",
+        "selector": "//*[@id='loginform']"
+    }
+}
