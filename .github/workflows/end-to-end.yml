@@ -59,6 +59,12 @@ jobs:
           echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=https://s0nought.github.io/ogru-tests/${GITHUB_RUN_NUMBER}/index.html\">" >> "${_alias_path}"
           echo "<meta http-equiv=\"Pragma\" content=\"no-cache\"><meta http-equiv=\"Expires\" content=\"0\">" >> "${_alias_path}"
 
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: update latest alias
+
       - name: Generate report
         uses: simple-elf/allure-report-action@master
         if: always()
