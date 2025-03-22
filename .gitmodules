@@ -1,3 +1,4 @@
 [submodule "github-pages"]
 	path = github-pages
 	url = https://github.com/s0nought/ogru-tests.git
+	branch = gh-pages
