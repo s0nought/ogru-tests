@@ -30,9 +30,15 @@ jobs:
       - name: Run tests
         run: |
           cp .env.sample .env
-          python main.py
+
+          if [[ $PYTEST_ENABLE_TERMINAL == "true" ]]; then
+            python main.py
+          else
+            python main.py -p no:terminal
+          fi
         env:
           CI: definitely
+          PYTEST_ENABLE_TERMINAL: ${{ vars.PYTEST_ENABLE_TERMINAL }}
           OGRU_USER_LOGIN: ${{ vars.OGRU_USER_LOGIN }}
           OGRU_USER_PASSWORD: ${{ secrets.OGRU_USER_PASSWORD }}
 
