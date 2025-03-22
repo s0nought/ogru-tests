@@ -22,7 +22,10 @@ def main() -> None:
 
     if CI == None:
         util.allure.copy_history()
-        util.allure.write_environment_file()
+
+    util.allure.write_environment_file()
+
+    if CI == None:
         util.allure.generate_report()
         util.allure.open_report()
 
