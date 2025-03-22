@@ -5,6 +5,7 @@ End-to-end tests for [old-games.ru](https://www.old-games.ru/)
 Table of Contents:
 
 - [Tests](#tests)
+- [Reports](#reports)
 - [Stack](#stack)
 - [Setup](#setup)
 - [Scripts](#scripts)
@@ -13,6 +14,10 @@ Table of Contents:
 
 - **Authentication**
     - _Log in with username and password_
+
+## Reports
+
+[Latest Allure Report](https://s0nought.github.io/ogru-tests/index.html)
 
 ## Stack
 
