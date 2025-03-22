@@ -25,7 +25,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python main.py -p no:terminal
+          python main.py
         env:
           CI: definitely
           OGRU_USER_LOGIN: ${{ vars.OGRU_USER_LOGIN }}
