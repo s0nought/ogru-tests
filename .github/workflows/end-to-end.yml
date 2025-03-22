@@ -1,6 +1,12 @@
 name: end-to-end
 
-on: [push]
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "**.py"
+      - "**.json"
 
 jobs:
   test:
