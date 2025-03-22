@@ -10,25 +10,8 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Latest alias
-        run: |
-          _alias_dir="latest"
-          _alias_file="index.html"
-          _alias_path="${_alias_dir}/${_alias_file}"
-          mkdir -p "${_alias_dir}"
-          touch "${_alias_path}"
-          echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=https://s0nought.github.io/ogru-tests/${GITHUB_RUN_NUMBER}/index.html\">" >> "${_alias_path}"
-          echo "<meta http-equiv=\"Pragma\" content=\"no-cache\"><meta http-equiv=\"Expires\" content=\"0\">" >> "${_alias_path}"
-
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          default_author: github_actions
-          message: update latest alias
-          push: origin gh-pages
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -58,7 +41,31 @@ jobs:
           OGRU_USER_LOGIN: ${{ vars.OGRU_USER_LOGIN }}
           OGRU_USER_PASSWORD: ${{ secrets.OGRU_USER_PASSWORD }}
 
-      - name: Get history
+      - name: Checkout
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Latest alias
+        run: |
+          _alias_dir="latest"
+          _alias_file="index.html"
+          _alias_path="${_alias_dir}/${_alias_file}"
+          mkdir -p "${_alias_dir}"
+          touch "${_alias_path}"
+          echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=https://s0nought.github.io/ogru-tests/${GITHUB_RUN_NUMBER}/index.html\">" >> "${_alias_path}"
+          echo "<meta http-equiv=\"Pragma\" content=\"no-cache\"><meta http-equiv=\"Expires\" content=\"0\">" >> "${_alias_path}"
+  
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: update latest alias
+
+      - name: Checkout
         uses: actions/checkout@v4
         if: always()
         continue-on-error: true
