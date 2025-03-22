@@ -29,6 +29,7 @@ jobs:
 
       - name: Run tests
         run: |
+          cp .env.sample .env
           python main.py
         env:
           CI: definitely
