@@ -3,6 +3,9 @@ from os import getenv
 
 load_dotenv()
 
+def get_ci() -> str:
+    return getenv("CI")
+
 def get_logging_level() -> str:
     return getenv("OGRU_LOGGING_LEVEL", "INFO")
 
