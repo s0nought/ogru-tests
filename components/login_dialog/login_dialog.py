@@ -4,22 +4,22 @@ from elements.custom import CustomElement
 
 class LoginDialog(CustomComponent):
     def __init__(self, page: Page, parent_name: str) -> None:
-        super().__init__(page, parent_name, "login_dialog")
+        super().__init__(page, parent_name)
 
         self.username_input = CustomElement(
             self.page,
             self.element_parent,
-            self.elements.get("usernameInput")
+            self.elements_data.get("usernameInput")
         )
         self.password_input = CustomElement(
             self.page,
             self.element_parent,
-            self.elements.get("passwordInput")
+            self.elements_data.get("passwordInput")
         )
         self.submit_button = CustomElement(
             self.page,
             self.element_parent,
-            self.elements.get("submitButton")
+            self.elements_data.get("submitButton")
         )
 
     def fill_username_input(self, value: str) -> None:

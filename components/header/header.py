@@ -4,12 +4,12 @@ from elements.custom import CustomElement
 
 class Header(CustomComponent):
     def __init__(self, page: Page, parent_name: str) -> None:
-        super().__init__(page, parent_name, "header")
+        super().__init__(page, parent_name)
 
         self.login_link = CustomElement(
             self.page,
             self.element_parent,
-            self.elements.get("loginLink"),
+            self.elements_data.get("loginLink"),
         )
 
     def click_login_link(self) -> None:
