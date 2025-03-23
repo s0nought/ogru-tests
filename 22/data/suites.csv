@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","8337","Authentication","tests.authentication","Sun Mar 23 17:02:43 GMT 2025","passed","Sun Mar 23 17:02:51 GMT 2025","","test_authentication","",""

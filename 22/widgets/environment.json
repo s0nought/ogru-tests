@@ -1,0 +1,1 @@
+[{"values":["Linux"],"name":"system_name"},{"values":["3.13.2"],"name":"python_version"},{"values":["8.3.5"],"name":"pytest_version"},{"values":["--strict-markers -m cjm --browser chromium --output test-results --tracing off --video off --screenshot only-on-failure --full-page-screenshot --alluredir allure-results --clean-alluredir"],"name":"pytest_addopts"}]
