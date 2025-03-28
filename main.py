@@ -15,9 +15,6 @@ def main() -> None:
     logging.basicConfig(filename=LOG_FILE, format=LOG_FORMAT, level=LOGGING_LEVEL)
     logger.info("RUNNING MAIN SEQUENCE")
 
-    if CI == None:
-        util.allure.clean_results()
-
     pytest.main(sys.argv[1:])
 
     if CI == None:
