@@ -20,22 +20,6 @@ environment_file = util.path.get_path(results_name, environment_file_name)
 results_history = util.path.get_pure_path(results_name, "history")
 report_history = util.path.get_pure_path(report_name, "history")
 
-def clean_results(path: Path = results) -> None:
-    if not path.exists() or not path.is_dir():
-        logger.debug(f"Skipping {path}")
-        return
-
-    try:
-        logger.debug(f"Removing {path}")
-        util.dir.remove(path)
-    except FileNotFoundError as e:
-        logger.warning(e)
-
-    logger.debug(f"Creating {path}")
-    util.dir.create(path)
-
-    logger.info("OK")
-
 def copy_history(report_history: PurePath = report_history, results_history: PurePath = results_history) -> None:
     try:
         logger.debug(f"Src: {report_history}")
